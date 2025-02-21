@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Periodic Table</title>
     <link rel="stylesheet" href="style.css">
-    <a href="file:///C:/Users/Acer/Desktop/Periodic%20table/index.html" target="_blank">Click here to open the Periodic Table</a>
+    <a href="https://github.com/Rose-10877/periodic_table.git"></a>
 
     <style>
         /* Popup display */
@@ -129,14 +129,27 @@
         </div>
     </div>
 
-    <!-- Popup for displaying bond information -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span id="close-popup" class="close-popup">&times;</span>
-            <h2>Bond Information</h2>
-            <p id="bond-info"></p>
-        </div>
+ <!-- Popup for displaying bond information -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span id="close-popup" class="close-popup">&times;</span>
+        <h2>Bond Information</h2>
+        <p id="bond-info"></p>
+
+        <!-- Input for bond type -->
+        <label for="bond-type-input"><strong>Bond Type:</strong></label>
+        <input type="text" id="bond-type-input" placeholder="Enter bond type..." />
+
+        <!-- Button to check answer -->
+
+        <button id="submit-bond" onclick="checkBondType()">Submit</button>
+<p id="bond-result"></p>
+
+        <!-- Result message -->
+        <p id="bond-result"></p>
     </div>
+</div>
+
 
     <script src="script.js"></script>
     

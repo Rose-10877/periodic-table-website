@@ -223,12 +223,44 @@ function showBondInfo() {
         <strong>Element Selected:</strong> ${el1.name} (${el1.symbol}) and ${el2.name} (${el2.symbol}) <br>
         <strong>Formula:</strong> ${formula} <br>
         <strong>Electronegativity:</strong> ${electronegativityCalculation} <br>
-        <strong>Bond Type:</strong> ${bondType} <br>
+        
     `;
 
+    // Set correct bond type as a hidden value
+    document.getElementById("bond-info").setAttribute("data-correct-answer", bondType);
+
+    // Reset previous input and result message
+    document.getElementById("bond-type-input").value = "";
+    document.getElementById("bond-result").innerText = "";
+
+    // Show the popup
     document.getElementById("popup").style.display = "flex";
+    
+    // Reset selected elements for next selection
     selectedElements = [];
 }
+
+// Function to check bond type answer
+function checkBondType() {
+    let userAnswer = document.getElementById("bond-type-input").value.trim();
+    let correctAnswer = document.getElementById("bond-info").getAttribute("data-correct-answer");
+
+    let resultText = document.getElementById("bond-result");
+
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+        resultText.innerHTML = "✅ Correct!";
+        resultText.style.color = "lightgreen";
+    } else {
+        resultText.innerHTML = "❌ Try again!";
+        resultText.style.color = "red";
+    }
+}
+
+// Close popup when clicking 'X'
+document.getElementById("close-popup").addEventListener("click", function () {
+    document.getElementById("popup").style.display = "none";
+});
+
 
 // Search functionality for filtering elements
 function searchElement() {
